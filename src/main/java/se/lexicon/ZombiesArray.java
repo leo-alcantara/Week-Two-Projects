@@ -2,7 +2,7 @@ package se.lexicon;
 
 import java.util.Random;
 
-public class ArraysZombies {
+public class ZombiesArray {
 
     public static void main(String[] args) {
         String weapons[] = {"Glock", "Shotgun", "Sniper Rifle", "Grenade"};
@@ -15,13 +15,13 @@ public class ArraysZombies {
         String randomZombie1 = "Runner";
         String randomZombie2 = "Wanderer";
 
-        Random weaponGenerator = new Random();
-        int randomWeapon = weaponGenerator.nextInt(ammo.length);
+        /*Random weaponGenerator = new Random();
+        int randomWeapon = weaponGenerator.nextInt(weapons.length);
         //System.out.println(randomWeapon);
 
         Random ammoGenerator = new Random();
         int randomAmmo = ammoGenerator.nextInt(ammo.length);
-        //System.out.println(randomAmmo);
+        //System.out.println(randomAmmo);*/
 
         Random zombieGenerator = new Random();
         int randomZombie = zombieGenerator.nextInt(zombies.length);
@@ -30,15 +30,15 @@ public class ArraysZombies {
 
         if (randomZombie == 0) {
             System.out.println("Watch for the " + randomZombie0 + ".");
-            System.out.println("You need your " + weapons[0] + " or your " + weapons[1] + ". Hurry!");
+            System.out.println("You need your " + weapons[0] + " or your " + weapons[1] + " to kill it. Hurry!");
         }
         if (randomZombie == 1) {
             System.out.println("Watch for the " + randomZombie1 + ".");
-            System.out.println("You need your " + weapons[0] + " or your " + weapons[1] + ". Hurry!");
+            System.out.println("You need your " + weapons[0] + " or your " + weapons[1] + " to kill it. Hurry!");
         }
         if (randomZombie == 2) {
             System.out.println("Watch for the " + randomZombie2 + ".");
-            System.out.println("You need your " + weapons[2] + " or a " + weapons[3] + ". Hurry!");
+            System.out.println("You need your " + weapons[2] + " or a " + weapons[3] + " to kill it. Hurry!");
         }
     }
 
