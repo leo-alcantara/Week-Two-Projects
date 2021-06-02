@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class WeekTwoExercises {
 
 
-
+    //Exercise 02
     public static int indexOf (int findIndexElement, int source[]){
         int indexFound = Arrays.binarySearch(source, findIndexElement);
 
@@ -15,33 +15,32 @@ public class WeekTwoExercises {
             return -1;
         }
     }
-
+    //Exercise 08
     public static int removeDuplicates(int numbers[], int n) {
         if (n == 0 || n == 1) {
             return n;
         }
-
         // creating another array for only storing
         // the unique elements
         int[] temp = new int[n];
         int j = 0;
-
         for (int i = 0; i < n - 1; i++) {
             if (numbers[i] != numbers[i + 1]) {
                 temp[j++] = numbers[i];
             }
         }
-
         temp[j++] = numbers[n - 1];
-
         // Changing the original array
         for (int i = 0; i < j; i++) {
             numbers[i] = temp[i];
         }
-
         return j;
     }
 
+    //Exercise 09
+    //public static void addElements (String[] surNames, String[] surNamesCopy){
+      //  Arrays.copyOf(surNames, surNames.length + 2);
+    //}
 
 
 
@@ -98,7 +97,7 @@ public class WeekTwoExercises {
             }
         }*/
 
-        /*Exercise 08*/
+        /*Exercise 08 (INCOMPLETE)
         int numbers[] = { 20, 20, 40, 20, 30, 40, 50, 60, 50 };
         System.out.println("Array numbers: " + Arrays.toString(numbers));
         int n = numbers.length;
@@ -107,7 +106,21 @@ public class WeekTwoExercises {
 
         // Printing The array elements
         for (int i = 0; i < n; i++)
-            System.out.print("Array without duplicate numbers: " + numbers[i] + " ");
+            System.out.print("Array without duplicate numbers: " + numbers[i] + " ");*/
+
+
+        /*Exercise 09
+        String[] surNames={"Robinson", "Davis", "Williams", "Jordan"};
+        String[] surNamesCopy = Arrays.copyOf(surNames, surNames.length + 2);
+        surNamesCopy[4]= "Jameson";
+        surNamesCopy[5]= "Odin";
+        for(String answer: surNamesCopy) {
+            System.out.print(answer + " ");
+        }*/
+
+
+
+
 
 
     }
