@@ -39,9 +39,9 @@ public class WeekTwoExercises {
 
     //Exercise 09
     public static String[] addElements (String[] surNames, String elementToAdd){
-        String[] surNamesCopy =  Arrays.copyOf(surNames, surNames.length + 1);
-        surNamesCopy[surNamesCopy.length - 1]= elementToAdd;
-        return surNamesCopy;
+        surNames =  Arrays.copyOf(surNames, surNames.length + 1);
+        surNames[surNames.length - 1]= elementToAdd;
+        return surNames;
     }
 
 
