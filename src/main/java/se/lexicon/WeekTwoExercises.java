@@ -38,20 +38,22 @@ public class WeekTwoExercises {
     }
 
     //Exercise 09
-    //public static void addElements (String[] surNames, String[] surNamesCopy){
-      //  Arrays.copyOf(surNames, surNames.length + 2);
-    //}
+    public static String[] addElements (String[] surNames, String elementToAdd){
+        String[] surNamesCopy =  Arrays.copyOf(surNames, surNames.length + 1);
+        surNamesCopy[surNamesCopy.length - 1]= elementToAdd;
+        return surNamesCopy;
+    }
 
 
 
     public static void main(String[] args) {
 
-        /*Exercise 01§
+        /*Exercise 01
         int[] numbers = {1,2,3,4,5};
         System.out.println(Arrays.toString(numbers));*/
 
-        /*Exercise 02*/
-        /*int[] source ={3, 5, 12, 53, 109};
+        /*Exercise 02
+        int[] source ={3, 5, 12, 53, 109};
         System.out.println("Index position of number 12 is: " + indexOf(12, source));*/
 
 
@@ -109,14 +111,16 @@ public class WeekTwoExercises {
             System.out.print("Array without duplicate numbers: " + numbers[i] + " ");*/
 
 
-        /*Exercise 09
+        //Exercise 09
         String[] surNames={"Robinson", "Davis", "Williams", "Jordan"};
-        String[] surNamesCopy = Arrays.copyOf(surNames, surNames.length + 2);
-        surNamesCopy[4]= "Jameson";
-        surNamesCopy[5]= "Odin";
-        for(String answer: surNamesCopy) {
+        String elementToAdd = "Elbrink";
+        surNames = addElements(surNames, elementToAdd);
+        elementToAdd = "Alcantara";
+        surNames = addElements(surNames, elementToAdd);
+        surNames = addElements(surNames, "Jonas");
+        for(String answer: surNames) {
             System.out.print(answer + " ");
-        }*/
+        }
 
 
 
