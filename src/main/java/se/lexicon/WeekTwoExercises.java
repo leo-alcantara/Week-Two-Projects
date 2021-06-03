@@ -1,52 +1,77 @@
 package se.lexicon;
 
+import jdk.nashorn.internal.runtime.Scope;
+
 import java.util.Arrays;
 
 public class WeekTwoExercises {
 
 
     //Exercise 02
-    public static int indexOf (int findIndexElement, int source[]){
+    public static int indexOf(int findIndexElement, int source[]) {
         int indexFound = Arrays.binarySearch(source, findIndexElement);
 
-        if(indexFound >=0) {
+        if (indexFound >= 0) {
             return indexFound;
         } else {
             return -1;
         }
     }
+
+
+
+
+
+
+
     //Exercise 08
-    public static int removeDuplicates(int numbers[], int n) {
-        if (n == 0 || n == 1) {
+    /*public static int[] removeDuplicates() {
+        int[] numbers = {20, 20, 40, 20, 30, 40, 50, 60, 50};
+        Arrays.sort(numbers);
+        System.out.println(Arrays.toString(numbers));
+        int[] duplicatedElements = {};
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j]);
+                }
+        }
+        return numbers;
+    }*/
+
+    public static int removeDuplicateElements(int numbers[], int n){
+        if (n==0 || n==1){
             return n;
         }
-        // creating another array for only storing
-        // the unique elements
-        int[] temp = new int[n];
+        int[] duplicatedNumbers = new int[n];
         int j = 0;
-        for (int i = 0; i < n - 1; i++) {
-            if (numbers[i] != numbers[i + 1]) {
-                temp[j++] = numbers[i];
+        for (int i=0; i<n-1; i++){
+            if (numbers[i] != numbers[i+1]){
+                duplicatedNumbers[j++] = numbers[i];
             }
         }
-        temp[j++] = numbers[n - 1];
-        // Changing the original array
-        for (int i = 0; i < j; i++) {
-            numbers[i] = temp[i];
+        duplicatedNumbers[j++] = numbers[n-1];
+        // Changing original array
+        for (int i=0; i<j; i++){
+            numbers[i] = duplicatedNumbers[i];
         }
         return j;
     }
 
+
+
+
+
+
+
     //Exercise 09
-    public static String[] addElements (String[] surNames, String elementToAdd){
-        surNames =  Arrays.copyOf(surNames, surNames.length + 1);
-        surNames[surNames.length - 1]= elementToAdd;
-        return surNames;
-    }
+        public static String[] addElements (String[]surNames, String elementToAdd){
+            surNames = Arrays.copyOf(surNames, surNames.length + 1);
+            surNames[surNames.length - 1] = elementToAdd;
+            return surNames;
+        }
 
 
-
-    public static void main(String[] args) {
+        public static void main (String[]args){
 
         /*Exercise 01
         int[] numbers = {1,2,3,4,5};
@@ -99,20 +124,19 @@ public class WeekTwoExercises {
             }
         }*/
 
-        /*Exercise 08 (INCOMPLETE)
-        int numbers[] = { 20, 20, 40, 20, 30, 40, 50, 60, 50 };
-        System.out.println("Array numbers: " + Arrays.toString(numbers));
-        int n = numbers.length;
+            //Exercise 08 (INCOMPLETE)
+            int numbers[] = {20, 20, 40, 20, 30, 40, 50, 60, 50};
+            System.out.println("Array numbers: " + Arrays.toString(numbers));
+            Arrays.sort(numbers);
+            int length = numbers.length;
+            length = removeDuplicateElements(numbers, length);
+            //printing array elements
+            for (int i=0; i<length; i++)
+                System.out.print(numbers[i] + " ");
 
-        n = removeDuplicates(numbers, n);
 
-        // Printing The array elements
-        for (int i = 0; i < n; i++)
-            System.out.print("Array without duplicate numbers: " + numbers[i] + " ");*/
-
-
-        //Exercise 09
-        String[] surNames={"Robinson", "Davis", "Williams", "Jordan"};
+            //Exercise 09
+        /*String[] surNames={"Robinson", "Davis", "Williams", "Jordan"};
         String elementToAdd = "Elbrink";
         surNames = addElements(surNames, elementToAdd);
         elementToAdd = "Alcantara";
@@ -120,15 +144,11 @@ public class WeekTwoExercises {
         surNames = addElements(surNames, "Jonas");
         for(String answer: surNames) {
             System.out.print(answer + " ");
+        }*/
+
+
         }
-
-
-
-
-
-
     }
-}
 
 
 
